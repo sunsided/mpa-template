@@ -1,0 +1,153 @@
+<script lang="ts">
+    import { resolve } from '$app/paths'
+</script>
+
+<svelte:head>
+    <title>Stack Overview | mpa-template</title>
+</svelte:head>
+
+<main class="min-h-screen bg-slate-950 text-slate-50">
+    <section class="mx-auto flex max-w-5xl flex-col gap-10 px-6 py-16">
+        <header
+            class="flex flex-col gap-4 rounded-3xl border border-slate-800/70 bg-slate-900/70 p-10 shadow-[0_20px_80px_-40px_rgba(8,47,73,0.8)]"
+        >
+            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200/90">
+                Tech Stack
+            </p>
+            <h1 class="text-4xl font-semibold leading-tight">mpa-template overview</h1>
+            <p class="max-w-3xl text-lg text-slate-200/90">
+                Multi-page, prerendered SvelteKit 5 starter with UnoCSS, TypeScript, Vitest,
+                Playwright, and Taskfile-driven workflows.
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a
+                    class="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100"
+                    href={resolve('/')}
+                    rel="external"
+                >
+                    Back to samples
+                </a>
+                <a
+                    class="inline-flex items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-100 transition-transform duration-200 hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100"
+                    href={resolve('/process')}
+                    rel="external"
+                >
+                    Process playbook
+                </a>
+                <a
+                    class="inline-flex items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-100 transition-transform duration-200 hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100"
+                    href="https://github.com/sunsided/mpa-template"
+                >
+                    Repository
+                </a>
+            </div>
+        </header>
+
+        <section class="grid gap-6 md:grid-cols-2">
+            <article
+                class="flex flex-col gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-6 shadow-[0_16px_40px_-24px_rgba(8,47,73,0.8)]"
+            >
+                <h2 class="text-xl font-semibold text-slate-50">Core runtime</h2>
+                <ul class="space-y-2 text-slate-200/90">
+                    <li>
+                        <strong class="text-slate-50">SvelteKit 5 MPA</strong> with prerender + CSR hydration.
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">TypeScript strict</strong> configured via `tsconfig.typecheck.json`
+                        for app-only checks.
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Vite</strong> build with UnoCSS and devtools-json
+                        plugin.
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Adapter-static</strong> for static export.
+                    </li>
+                </ul>
+            </article>
+            <article
+                class="flex flex-col gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-6 shadow-[0_16px_40px_-24px_rgba(8,47,73,0.8)]"
+            >
+                <h2 class="text-xl font-semibold text-slate-50">Styling</h2>
+                <ul class="space-y-2 text-slate-200/90">
+                    <li>
+                        <strong class="text-slate-50">UnoCSS</strong> with wind-4 preset and extractor
+                        for Svelte.
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Tailwind reset</strong> via `@unocss/reset/tailwind.css`.
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Space Grotesk</strong> font for headings and body.
+                    </li>
+                </ul>
+            </article>
+            <article
+                class="flex flex-col gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-6 shadow-[0_16px_40px_-24px_rgba(8,47,73,0.8)]"
+            >
+                <h2 class="text-xl font-semibold text-slate-50">Testing</h2>
+                <ul class="space-y-2 text-slate-200/90">
+                    <li>
+                        <strong class="text-slate-50">Vitest</strong> for unit tests (`task test:unit`).
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Playwright</strong> for E2E in `e2e/` (`task test:e2e`).
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Type checks</strong> via `task typecheck` (app-only
+                        scope).
+                    </li>
+                </ul>
+            </article>
+            <article
+                class="flex flex-col gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-6 shadow-[0_16px_40px_-24px_rgba(8,47,73,0.8)]"
+            >
+                <h2 class="text-xl font-semibold text-slate-50">Tooling</h2>
+                <ul class="space-y-2 text-slate-200/90">
+                    <li>
+                        <strong class="text-slate-50">Taskfile</strong> for scripted workflows (`task
+                        dev`, `task build`).
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">Corepack + Yarn 4</strong> using the `node_modules`
+                        linker.
+                    </li>
+                    <li>
+                        <strong class="text-slate-50">ESLint + Prettier</strong> configured for Svelte
+                        and TS.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="grid gap-6 md:grid-cols-3">
+            <article
+                class="flex flex-col gap-2 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-5 shadow-[0_12px_30px_-20px_rgba(8,47,73,0.8)]"
+            >
+                <h3 class="text-lg font-semibold text-slate-50">MPA routing</h3>
+                <p class="text-slate-300/90">
+                    Each page is a prerendered route; add new pages under
+                    `src/routes/*/+page.svelte`.
+                </p>
+            </article>
+            <article
+                class="flex flex-col gap-2 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-5 shadow-[0_12px_30px_-20px_rgba(8,47,73,0.8)]"
+            >
+                <h3 class="text-lg font-semibold text-slate-50">Styling approach</h3>
+                <p class="text-slate-300/90">
+                    Utility-first classes with scoped exceptions; document non-obvious class
+                    clusters.
+                </p>
+            </article>
+            <article
+                class="flex flex-col gap-2 rounded-2xl border border-slate-800/70 bg-slate-900/70 p-5 shadow-[0_12px_30px_-20px_rgba(8,47,73,0.8)]"
+            >
+                <h3 class="text-lg font-semibold text-slate-50">Testing flow</h3>
+                <p class="text-slate-300/90">
+                    Unit first (`task test:unit`), then E2E (`task test:e2e`) against a running
+                    preview.
+                </p>
+            </article>
+        </section>
+    </section>
+</main>
