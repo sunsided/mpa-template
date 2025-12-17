@@ -4,7 +4,8 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": ["svelte", "vite/client"],
+    "types": ["node","svelte", "vite/client"],
+    "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
     /**
