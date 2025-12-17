@@ -1,0 +1,43 @@
+# VCS and metadata
+.git
+.gitignore
+.github
+
+# Node/Yarn artifacts
+node_modules
+.pnp.cjs
+.pnp.loader.mjs
+.pnp.data.json
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Build outputs and caches
+dist
+build
+.svelte-kit
+.vite
+.vite-cache
+.cache
+.parcel-cache
+.eslintcache
+
+# Test outputs
+coverage
+playwright-report
+test-results
+.nyc_output
+.vitest
+
+# Env and local config
+.env
+.env.*
+!.env.example
+
+# IDE/editor
+.idea
+.vscode
+*.iml
+.DS_Store
+Thumbs.db
