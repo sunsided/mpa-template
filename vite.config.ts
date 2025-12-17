@@ -2,13 +2,32 @@ import devtoolsJson from 'vite-plugin-devtools-json'
 import { sveltekit } from '@sveltejs/kit/vite'
 import { defineConfig, searchForWorkspaceRoot } from 'vite'
 import path from 'node:path'
+import UnoCSS from 'unocss/vite'
+import extractorSvelte from '@unocss/extractor-svelte'
 
 export default defineConfig({
-    plugins: [devtoolsJson(), sveltekit()],
+    plugins: [
+        UnoCSS({
+            extractors: [extractorSvelte()],
+        }),
+        sveltekit(),
+        devtoolsJson(),
+    ],
 
     cacheDir: './.vitest-cache',
     test: {
-        exclude: ['**/node_modules/**', '**/dist/**', 'e2e/**'],
+        // Keep Vitest focused on unit tests; Playwright lives in e2e/.
+        exclude: [
+            '**/node_modules/**',
+            '**/.yarn/**',
+            '**/.pnp.*',
+            '**/.svelte-kit/**',
+            '**/dist/**',
+            '**/build/**',
+            '**/coverage/**',
+            '**/e2e/**',
+            '**/playwright.config.{js,ts,mjs,cjs}',
+        ],
     },
     server: {
         fs: {

@@ -49,16 +49,6 @@ tasks:
     cmds:
       - yarn svelte-kit sync
 
-  add:
-    desc: Add a dependency to the project
-    cmds:
-      - yarn add {{.CLI_ARGS}}
-
-  add:dev:
-    desc: Add a development dependency to the project
-    cmds:
-      - yarn add -D {{.CLI_ARGS}}
-
   build:
     desc: Build for production
     deps:
