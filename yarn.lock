@@ -246,7 +246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.24":
+"@jridgewell/trace-mapping@npm:^0.3.24, @jridgewell/trace-mapping@npm:^0.3.25":
   version: 0.3.31
   resolution: "@jridgewell/trace-mapping@npm:0.3.31"
   dependencies:
@@ -454,6 +454,8 @@ __metadata:
     "@sveltejs/kit": "npm:^2.49.2"
     "@sveltejs/vite-plugin-svelte": "npm:^6.2.1"
     svelte: "npm:^5.46.0"
+    svelte-check: "npm:^4.3.4"
+    typescript: "npm:^5.9.3"
     vite: "npm:^7.3.0"
     vite-plugin-devtools-json: "npm:^1.0.0"
   languageName: unknown
@@ -604,6 +606,15 @@ __metadata:
     ssri: "npm:^13.0.0"
     unique-filename: "npm:^5.0.0"
   checksum: 10c0/c7da1ca694d20e8f8aedabd21dc11518f809a7d2b59aa76a1fc655db5a9e62379e465c157ddd2afe34b19230808882288effa6911b2de26a088a6d5645123462
+  languageName: node
+  linkType: hard
+
+"chokidar@npm:^4.0.1":
+  version: 4.0.3
+  resolution: "chokidar@npm:4.0.3"
+  dependencies:
+    readdirp: "npm:^4.0.1"
+  checksum: 10c0/a58b9df05bb452f7d105d9e7229ac82fa873741c0c40ddcc7bb82f8a909fbe3f7814c9ebe9bc9a2bef9b737c0ec6e2d699d179048ef06ad3ec46315df0ebe6ad
   languageName: node
   linkType: hard
 
@@ -789,7 +800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fdir@npm:^6.5.0":
+"fdir@npm:^6.2.0, fdir@npm:^6.5.0":
   version: 6.5.0
   resolution: "fdir@npm:6.5.0"
   peerDependencies:
@@ -1132,7 +1143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.1.1":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: 10c0/e2e3e8170ab9d7c7421969adaa7e1b31434f789afb9b3f115f6b96d91945041ac3ceb02e9ec6fe6510ff036bcc0bf91e69a1772edc0b707e12b19c0f2d6bcf58
@@ -1171,6 +1182,13 @@ __metadata:
     err-code: "npm:^2.0.2"
     retry: "npm:^0.12.0"
   checksum: 10c0/9c7045a1a2928094b5b9b15336dcd2a7b1c052f674550df63cc3f36cd44028e5080448175b6f6ca32b642de81150f5e7b1a98b728f15cb069f2dd60ac2616b96
+  languageName: node
+  linkType: hard
+
+"readdirp@npm:^4.0.1":
+  version: 4.1.2
+  resolution: "readdirp@npm:4.1.2"
+  checksum: 10c0/60a14f7619dec48c9c850255cd523e2717001b0e179dc7037cfa0895da7b9e9ab07532d324bfb118d73a710887d1e35f79c495fa91582784493e085d18c72c62
   languageName: node
   linkType: hard
 
@@ -1262,7 +1280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sade@npm:^1.8.1":
+"sade@npm:^1.7.4, sade@npm:^1.8.1":
   version: 1.8.1
   resolution: "sade@npm:1.8.1"
   dependencies:
@@ -1349,6 +1367,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-check@npm:^4.3.4":
+  version: 4.3.4
+  resolution: "svelte-check@npm:4.3.4"
+  dependencies:
+    "@jridgewell/trace-mapping": "npm:^0.3.25"
+    chokidar: "npm:^4.0.1"
+    fdir: "npm:^6.2.0"
+    picocolors: "npm:^1.0.0"
+    sade: "npm:^1.7.4"
+  peerDependencies:
+    svelte: ^4.0.0 || ^5.0.0-next.0
+    typescript: ">=5.0.0"
+  bin:
+    svelte-check: bin/svelte-check
+  checksum: 10c0/c84a054daa2bdd377357082eb317ae86dabfc935a8b67867588c8a4e98ad644b67d3aa0f8572bf37cec3a2c37cae0b60632b430dc9d98faff9981efe74e0ca95
+  languageName: node
+  linkType: hard
+
 "svelte@npm:^5.46.0":
   version: 5.46.0
   resolution: "svelte@npm:5.46.0"
@@ -1399,6 +1435,26 @@ __metadata:
   version: 3.0.1
   resolution: "totalist@npm:3.0.1"
   checksum: 10c0/4bb1fadb69c3edbef91c73ebef9d25b33bbf69afe1e37ce544d5f7d13854cda15e47132f3e0dc4cafe300ddb8578c77c50a65004d8b6e97e77934a69aa924863
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.9.3":
+  version: 5.9.3
+  resolution: "typescript@npm:5.9.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/6bd7552ce39f97e711db5aa048f6f9995b53f1c52f7d8667c1abdc1700c68a76a308f579cd309ce6b53646deb4e9a1be7c813a93baaf0a28ccd536a30270e1c5
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.9.3#optional!builtin<compat/typescript>":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/ad09fdf7a756814dce65bc60c1657b40d44451346858eea230e10f2e95a289d9183b6e32e5c11e95acc0ccc214b4f36289dcad4bf1886b0adb84d711d336a430
   languageName: node
   linkType: hard
 
