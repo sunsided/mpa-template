@@ -2,6 +2,10 @@
 
 [![CI](https://github.com/sunsided/mpa-template/actions/workflows/ci.yml/badge.svg)](https://github.com/sunsided/mpa-template/actions/workflows/ci.yml)
 [![License: EUPL-1.2](https://img.shields.io/badge/License-EUPL--1.2-blue.svg)](https://eupl.eu/)
+[![Yarn 4](https://img.shields.io/badge/Yarn-4.12-2188b6?logo=yarn&logoColor=white)](https://yarnpkg.com/)
+[![Vite 7](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![SvelteKit 5](https://img.shields.io/badge/SvelteKit-5-ff3e00?logo=svelte&logoColor=white)](https://kit.svelte.dev/)
+[![UnoCSS](https://img.shields.io/badge/UnoCSS-wind--4-1a9f9f)](https://unocss.dev/)
 
 Minimal SvelteKit 5 multi-page template that prerenders and hydrates, styled with UnoCSS, and wired with Vitest/Playwright plus Taskfile automation. Use it as a starting point for static-first sites that still need client-side behavior.
 
