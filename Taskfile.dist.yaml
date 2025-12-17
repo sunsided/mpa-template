@@ -1,0 +1,194 @@
+---
+version: '3'
+
+tasks:
+  install:
+    desc: Install dependencies using corepack and yarn
+    aliases:
+      - update
+    preconditions:
+      - sh: command -v corepack >/dev/null 2>&1
+        msg: |
+          "corepack" is not available in your PATH.
+          Please install Node.js (which includes Corepack) or install Corepack manually.
+          Hints:
+            - Enable if available:  corepack enable
+            - Install via npm:      npm i -g corepack
+            - Docs: https://nodejs.org/api/corepack.html
+      - sh: command -v pre-commit >/dev/null 2>&1
+        msg: |
+          "pre-commit" is not available in your PATH.
+          Please install it from https://pre-commit.com/
+      - sh: command -v git-lfs >/dev/null 2>&1
+        msg: |
+          "git lfs" is not available in your PATH.
+          Please install it from https://git-lfs.com/
+    cmds:
+      - git lfs install
+      - pre-commit install
+      - corepack enable
+      - yarn install
+
+  dev:
+    desc: Start development server
+    interactive: true
+    cmds:
+      - yarn dev
+
+  upgrade:
+    desc: Upgrade dependencies
+    interactive: true
+    aliases:
+      - update
+    cmds:
+      - pre-commit autoupdate
+      - yarn upgrade-interactive
+
+  sync:
+    desc: Synchronize SvelteKit types
+    cmds:
+      - yarn svelte-kit sync
+
+  build:
+    desc: Build for production
+    deps:
+      - sync
+    cmds:
+      - yarn build
+
+  preview:
+    desc: Preview production build
+    deps: [build]
+    cmds:
+      - yarn preview
+
+  check:
+    desc: Run svelte-check for type checking
+    deps:
+      - install
+    cmds:
+      - yarn check
+
+  typecheck:
+    desc: Run `tsc --noEmit` for raw TypeScript checking
+    deps:
+      - install
+    preconditions:
+      - sh: command -v yarn >/dev/null 2>&1
+        msg: |
+          "yarn" is not available in your PATH.
+          Please install it via Corepack or npm:
+            corepack enable
+            corepack prepare yarn@stable --activate
+            npm install -g yarn
+    cmds:
+      - yarn tsc --noEmit {{.CLI_ARGS}}
+    aliases:
+      - tsc
+      - type-check
+
+  lint:
+    desc: Lint codebase with ESLint (TS + Svelte)
+    cmds:
+      - yarn lint
+
+  lint:fix:
+    desc: Autofix lint issues where possible
+    aliases:
+      - fix
+    cmds:
+      - yarn lint:fix
+
+  lint:fix:files:
+    desc: Autofix lint issues where possible
+    aliases:
+      - fix
+    cmds:
+      - yarn lint:fix:files {{.CLI_ARGS}}
+
+  format:
+    desc: Format code with Prettier
+    aliases:
+      - fmt
+    sources:
+      - '**/*.{ts,js,svelte,css,md,json,yaml,yml}'
+    cmds:
+      - yarn format
+
+  format:pre-commit:
+    desc: Format code with Prettier
+    cmds:
+      - yarn format:files {{.CLI_ARGS}}
+
+  format:check:
+    desc: Check formatting without writing changes
+    cmds:
+      - yarn format:check
+
+  clean:
+    desc: Clean build artifacts and dependencies
+    cmds:
+      - rm -rf .svelte-kit build node_modules .yarn/cache
+
+  reset:
+    desc: Clean and reinstall
+    cmds:
+      - task: clean
+      - task: install
+
+  test:
+    desc: Run all tests (Vitest + Playwright) - requires dev server running for E2E
+    cmds:
+      - yarn test:run
+      - yarn test:e2e
+
+  test:unit:
+    desc: Run unit tests (Vitest)
+    cmds:
+      - yarn test:run
+
+  test:integration:
+    desc: Run integration/E2E tests (requires server running)
+    cmds:
+      - yarn test:e2e
+
+  test:watch:
+    desc: Run Vitest in watch/UI mode
+    cmds:
+      - yarn test:watch
+
+  test:coverage:
+    desc: Run Vitest with coverage report
+    cmds:
+      - yarn test:run --coverage
+
+  test:e2e:
+    desc: Run Playwright E2E tests
+    cmds:
+      - yarn test:e2e
+
+  test:e2e:ui:
+    desc: Run Playwright tests with UI mode
+    cmds:
+      - yarn test:e2e:ui
+
+  test:e2e:headed:
+    desc: Run Playwright tests in headed mode
+    cmds:
+      - yarn test:e2e:headed
+
+  docker:build:
+    desc: Build Docker image
+    cmds:
+      - docker build -t ghcr.io/sunsided/website .
+
+  docker:run:
+    desc: Run Docker container (interactive, CTRL-C to stop)
+    interactive: true
+    cmds:
+      - docker run --rm --init -p 5173:80 --name web-tui-dev ghcr.io/sunsided/website
+
+  docker:stop:
+    desc: Stop running impostor-dev container
+    cmds:
+      - docker stop web-tui-dev 2>/dev/null || true

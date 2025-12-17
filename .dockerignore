@@ -29,6 +29,10 @@ playwright-report
 test-results
 .nyc_output
 .vitest
+.vitest-cache
+
+# Taskfile
+.task
 
 # Env and local config
 .env

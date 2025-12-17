@@ -40,6 +40,10 @@ playwright-report/
 test-results/
 .nyc_output/
 .vitest/
+.vitest-cache/
+
+# Taskfile
+.task/
 
 # IDE/editor
 .idea/

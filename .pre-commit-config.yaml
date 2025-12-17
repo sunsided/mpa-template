@@ -1,0 +1,58 @@
+---
+# See https://pre-commit.com/
+# Run "pre-commit install" once to enable the Git Hooks.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.37.1
+    hooks:
+      - name: Lint Yaml files
+        id: yamllint
+        args:
+          - --strict
+          - --config-file=.yamllint.yaml
+          - .
+
+  - repo: https://github.com/thlorenz/doctoc
+    rev: v2.2.0
+    hooks:
+      - name: Generate Markdown Table of Contents
+        id: doctoc
+        args:
+          - --github
+          - --update-only
+
+  - repo: local
+    hooks:
+      - id: eslint
+        name: Run ESLint Staged
+        entry: task
+        args:
+          - lint:fix:files
+          - --
+        language: system
+        pass_filenames: true
+
+      - id: type-check
+        name: Run task type-check
+        entry: task
+        args:
+          - typecheck
+          - --
+        language: system
+        files: \.(tsx|ts|d.ts|cts|d.cts|mts|d.mts)?$
+        pass_filenames: true
+
+      - id: prettier-changed-files
+        name: Run Prettier on staged JS/TS files
+        entry: task
+        args:
+          - format:pre-commit
+          - --
+        language: system
+        pass_filenames: true
