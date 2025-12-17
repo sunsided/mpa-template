@@ -26,6 +26,9 @@
 - PascalCase components, camelCase functions/vars, SCREAMING_SNAKE_CASE env vars. Keep components small and pure; push state up to pages/layouts. Treat every change like a senior engineer: favor reuse, composition, and testability over one-off shortcuts.
 - Use UnoCSS utility-first classes; add component `<style>` blocks only for scoped exceptions.
 - Provide documentation comments for functions, types, fields, and any non-obvious CSS classes to clarify intent and usage patterns.
+- Place all Playwright/E2E specs under `e2e/` only; avoid nested `tests/` for E2E to keep paths and config predictable.
+- Use `task typecheck` (backed by `tsconfig.typecheck.json`) for app-only checks; tests and dependencies in `node_modules/.yarn` are excluded to keep signal clean.
+- `task typecheck` always runs the full project config (ignores file lists from hooks) to avoid mixing `tsc -p` with per-file arguments.
 
 ## Testing Guidelines
 

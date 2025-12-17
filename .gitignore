@@ -19,6 +19,7 @@ build/
 .cache/
 .parcel-cache/
 .eslintcache
+.vitest-cache/
 
 # Logs and diagnostics
 npm-debug.log*

@@ -16,6 +16,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
+    "sync": "svelte-kit sync",
+    "clean": "rm -rf .svelte-kit build .turbo node_modules",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint .",
@@ -23,17 +25,31 @@
     "lint:fix:files": "eslint --fix",
     "format": "node format-runner.mjs --write .",
     "format:check": "node format-runner.mjs --check .",
-    "format:files": "node format-runner.mjs --write --ignore-unknown"
+    "format:files": "node format-runner.mjs --write --ignore-unknown",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:headed": "playwright test --headed --debug"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.57.0",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.49.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/svelte": "^5.2.9",
+    "@types/jsdom": "^27",
+    "@types/node": "^25.0.3",
     "@typescript-eslint/eslint-plugin": "^8.50.0",
     "@typescript-eslint/parser": "^8.50.0",
+    "@vitest/ui": "^4.0.16",
     "eslint": "^9.39.2",
     "eslint-plugin-svelte": "^3.13.1",
+    "jsdom": "^27.3.0",
     "prettier": "^3.7.4",
     "prettier-plugin-svelte": "^3.4.1",
     "svelte": "^5.46.0",
@@ -42,6 +58,7 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.50.0",
     "vite": "^7.3.0",
-    "vite-plugin-devtools-json": "^1.0.0"
+    "vite-plugin-devtools-json": "^1.0.0",
+    "vitest": "^4.0.16"
   }
 }

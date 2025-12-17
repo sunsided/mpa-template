@@ -7,6 +7,9 @@ export default defineConfig({
     plugins: [devtoolsJson(), sveltekit()],
 
     cacheDir: './.vitest-cache',
+    test: {
+        exclude: ['**/node_modules/**', '**/dist/**', 'e2e/**'],
+    },
     server: {
         fs: {
             allow: [

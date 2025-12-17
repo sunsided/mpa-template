@@ -19,6 +19,7 @@ build
 .svelte-kit
 .vite
 .vite-cache
+.vitest-cache
 .cache
 .parcel-cache
 .eslintcache

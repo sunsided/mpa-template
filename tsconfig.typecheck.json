@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/**/*.d.ts"],
+  "exclude": [
+    "**/node_modules/**",
+    "**/.yarn/**",
+    "**/.pnp.cjs",
+    "**/.svelte-kit/output/**",
+    "**/.svelte-kit/generated/**",
+    "e2e/**",
+    "tests/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "playwright-report/**",
+    "test-results/**"
+  ]
+}

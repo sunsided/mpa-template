@@ -49,6 +49,16 @@ tasks:
     cmds:
       - yarn svelte-kit sync
 
+  add:
+    desc: Add a dependency to the project
+    cmds:
+      - yarn add {{.CLI_ARGS}}
+
+  add:dev:
+    desc: Add a development dependency to the project
+    cmds:
+      - yarn add -D {{.CLI_ARGS}}
+
   build:
     desc: Build for production
     deps:
@@ -71,8 +81,6 @@ tasks:
 
   typecheck:
     desc: Run `tsc --noEmit` for raw TypeScript checking
-    deps:
-      - install
     preconditions:
       - sh: command -v yarn >/dev/null 2>&1
         msg: |
@@ -82,7 +90,7 @@ tasks:
             corepack prepare yarn@stable --activate
             npm install -g yarn
     cmds:
-      - yarn tsc --noEmit {{.CLI_ARGS}}
+      - yarn tsc --noEmit -p tsconfig.typecheck.json
     aliases:
       - tsc
       - type-check
@@ -155,7 +163,7 @@ tasks:
   test:watch:
     desc: Run Vitest in watch/UI mode
     cmds:
-      - yarn test:watch
+      - yarn test
 
   test:coverage:
     desc: Run Vitest with coverage report
