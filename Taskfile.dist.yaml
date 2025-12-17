@@ -177,16 +177,18 @@ tasks:
 
   docker:build:
     desc: Build Docker image
+    deps:
+      - build
     cmds:
-      - docker build -t ghcr.io/sunsided/website .
+      - docker build -t mpa-template-dev .
 
   docker:run:
     desc: Run Docker container (interactive, CTRL-C to stop)
     interactive: true
     cmds:
-      - docker run --rm --init -p 5173:80 --name web-tui-dev ghcr.io/sunsided/website
+      - docker run --rm --init -p 5173:80 --name mpa-template-dev mpa-template-dev
 
   docker:stop:
     desc: Stop running impostor-dev container
     cmds:
-      - docker stop web-tui-dev 2>/dev/null || true
+      - docker stop mpa-template-dev 2>/dev/null || true

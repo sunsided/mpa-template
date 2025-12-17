@@ -15,7 +15,6 @@ node_modules
 
 # Build outputs and caches
 dist
-build
 .svelte-kit
 .vite
 .vite-cache
