@@ -70,11 +70,11 @@
 </svelte:head>
 
 <main class="min-h-screen bg-slate-950 text-slate-50">
-    <section class="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-16">
+    <section class="mx-auto max-w-6xl px-6 py-16" flex="~ col" gap="12">
         <header
             class="grid gap-10 rounded-3xl border border-slate-800/70 bg-gradient-to-br from-slate-900 via-slate-900/70 to-slate-900/50 p-10 shadow-[0_20px_80px_-40px_rgba(8,47,73,0.8)] md:grid-cols-12"
         >
-            <div class="flex flex-col gap-5 md:col-span-7">
+            <div class="md:col-span-7" flex="~ col" gap="5">
                 <p class="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200/90">
                     SvelteKit MPA Starter
                 </p>
@@ -124,10 +124,18 @@
             </div>
             <div class="relative md:col-span-5">
                 <div
-                    class="absolute -left-6 -top-6 h-28 w-28 rounded-full bg-cyan-500/30 blur-3xl"
+                    class="absolute rounded-full bg-cyan-500/30 blur-3xl"
+                    top="-6"
+                    left="-6"
+                    h="28"
+                    w="28"
                 ></div>
                 <div
-                    class="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-indigo-500/30 blur-3xl"
+                    class="absolute rounded-full bg-indigo-500/30 blur-3xl"
+                    bottom="-6"
+                    right="-4"
+                    h="24"
+                    w="24"
                 ></div>
                 <div
                     class="overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60 shadow-lg shadow-slate-950/50"

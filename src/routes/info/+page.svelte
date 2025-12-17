@@ -7,7 +7,7 @@
 </svelte:head>
 
 <main class="min-h-screen bg-slate-950 text-slate-50">
-    <section class="mx-auto flex max-w-5xl flex-col gap-10 px-6 py-16">
+    <section class="mx-auto max-w-5xl px-6 py-16" flex="~ col" gap="10">
         <header
             class="flex flex-col gap-4 rounded-3xl border border-slate-800/70 bg-slate-900/70 p-10 shadow-[0_20px_80px_-40px_rgba(8,47,73,0.8)]"
         >
