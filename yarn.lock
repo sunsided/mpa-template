@@ -831,7 +831,7 @@ __metadata:
     "@types/node": "npm:^25.0.3"
     "@typescript-eslint/eslint-plugin": "npm:^8.50.0"
     "@typescript-eslint/parser": "npm:^8.50.1"
-    "@unocss/extractor-svelte": "npm:^66.5.10"
+    "@unocss/extractor-svelte": "npm:^66.5.12"
     "@unocss/preset-attributify": "npm:^66.5.10"
     "@unocss/preset-icons": "npm:^66.5.10"
     "@vitest/ui": "npm:^4.0.16"
@@ -1344,10 +1344,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/extractor-svelte@npm:^66.5.10":
-  version: 66.5.10
-  resolution: "@unocss/extractor-svelte@npm:66.5.10"
-  checksum: 10c0/31513e65d30a40d142535b1d18f1a059a4c648ab92083fea84951e41df36ae1d8212e19fb5d4cea05dc5d0102502a294b634fbccf0462633c78c3aaa9b92743f
+"@unocss/extractor-svelte@npm:^66.5.12":
+  version: 66.5.12
+  resolution: "@unocss/extractor-svelte@npm:66.5.12"
+  checksum: 10c0/cf1429efe816f80ea96219f413d42b13b1f5a0a8a26ad591c21436525b67a0fe626be323e202de04998d7da04d5f464677f3c15d93037c28189689c4df75fa6c
   languageName: node
   linkType: hard
 
