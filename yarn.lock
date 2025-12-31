@@ -832,7 +832,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^8.50.0"
     "@typescript-eslint/parser": "npm:^8.50.1"
     "@unocss/extractor-svelte": "npm:^66.5.10"
-    "@unocss/preset-attributify": "npm:^66.5.10"
+    "@unocss/preset-attributify": "npm:^66.5.12"
     "@unocss/preset-icons": "npm:^66.5.10"
     "@vitest/ui": "npm:^4.0.16"
     eslint: "npm:^9.39.2"
@@ -1335,6 +1335,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@unocss/core@npm:66.5.12":
+  version: 66.5.12
+  resolution: "@unocss/core@npm:66.5.12"
+  checksum: 10c0/fd5ad8d35675cf7f93b20685f97ac21fc6cca1485bc01d9943e43c9788975d53e7985c26872d45817a63727fb56d6edd835c4365a7f9dfa829f746fad0be933a
+  languageName: node
+  linkType: hard
+
 "@unocss/extractor-arbitrary-variants@npm:66.5.10":
   version: 66.5.10
   resolution: "@unocss/extractor-arbitrary-variants@npm:66.5.10"
@@ -1381,12 +1388,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/preset-attributify@npm:66.5.10, @unocss/preset-attributify@npm:^66.5.10":
+"@unocss/preset-attributify@npm:66.5.10":
   version: 66.5.10
   resolution: "@unocss/preset-attributify@npm:66.5.10"
   dependencies:
     "@unocss/core": "npm:66.5.10"
   checksum: 10c0/6459507fe66ac165a7c7dd754fe73d9cd02a210c72491be721227028b192fc4a114fbec96479de71595f76752196e717ac2457835c4b97eee72fa428b1c92adc
+  languageName: node
+  linkType: hard
+
+"@unocss/preset-attributify@npm:^66.5.12":
+  version: 66.5.12
+  resolution: "@unocss/preset-attributify@npm:66.5.12"
+  dependencies:
+    "@unocss/core": "npm:66.5.12"
+  checksum: 10c0/3d910ed3b16ca0502a90aeba08151e129d1610414f3028a5545324c48a5201c80fed2ca0c3dc744136ffc0356594de8d7eee80a48ba1cea5131191f151ab9b36
   languageName: node
   linkType: hard
 
